@@ -1,0 +1,19 @@
+
+Brazilian E-commerce Knowledge Graph Summary
+============================================
+
+Dataset Statistics:
+- Tables: 9
+- Total Columns: 52
+- Total Relationships: 9
+
+Discovered Foreign Key Relationships:
+- sellers.seller_id -> order_items.seller_id (confidence: 100.00%)
+- orders.order_id -> order_items.order_id (confidence: 99.22%)
+- orders.order_id -> order_payments.order_id (confidence: 100.00%)
+- orders.order_id -> order_reviews.order_id (confidence: 99.23%)
+- orders.customer_id -> customers.customer_id (confidence: 100.00%)
+- order_items.order_id -> order_payments.order_id (confidence: 99.22%)
+- order_items.order_id -> order_reviews.order_id (confidence: 98.49%)
+- order_items.product_id -> products.product_id (confidence: 100.00%)
+- order_payments.order_id -> order_reviews.order_id (confidence: 99.23%)

@@ -1,0 +1,638 @@
+analysis_scenarios: []
+business_domain: null
+created_at: 2025-07-25 15:44:14.359720
+description: Auto-discovered schema for test_ecommerce
+global_relationships: []
+name: test_ecommerce
+tables:
+  customers:
+    analysis_tags: []
+    business_domain: sales
+    columns:
+      customer_city:
+        aggregation_methods: []
+        analysis_tags: []
+        business_domain: sales
+        cardinality: 379
+        categories: null
+        data_type: &id001 !!python/object/apply:schema.schema_manager.DataType
+        - string
+        description: null
+        display_name: Customer City
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: customer_city
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - &id002 !!python/object/apply:numpy.dtype
+          args:
+          - f8
+          - false
+          - true
+          state: !!python/tuple
+          - 3
+          - <
+          - null
+          - null
+          - null
+          - -1
+          - -1
+          - 0
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: &id003 !!python/object/apply:numpy.core.multiarray.scalar
+        - &id009 !!python/object/apply:numpy.dtype
+          args:
+          - b1
+          - false
+          - true
+          state: !!python/tuple
+          - 3
+          - '|'
+          - null
+          - null
+          - null
+          - -1
+          - -1
+          - 0
+        - !!binary |
+          AA==
+        related_columns: []
+        semantic_role: &id004 !!python/object/apply:schema.schema_manager.SemanticRole
+        - geographical
+        std_value: null
+        unique_ratio: 0.379
+      customer_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: sales
+        cardinality: 1000
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Customer Id
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: customer_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: &id005 !!python/object/apply:schema.schema_manager.SemanticRole
+        - identifier
+        std_value: null
+        unique_ratio: 1.0
+      customer_state:
+        aggregation_methods: []
+        analysis_tags: []
+        business_domain: sales
+        cardinality: 26
+        categories:
+        - SP
+        - SC
+        - MG
+        - PR
+        - RJ
+        - RS
+        - PA
+        - GO
+        - ES
+        - BA
+        - MA
+        - MS
+        - CE
+        - DF
+        - RN
+        - PE
+        - MT
+        - AM
+        - AP
+        - AL
+        data_type: *id001
+        description: null
+        display_name: Customer State
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: customer_state
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id004
+        std_value: null
+        unique_ratio: 0.026
+      customer_unique_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: sales
+        cardinality: 999
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Customer Unique Id
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: customer_unique_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: null
+        unique_ratio: 0.999
+      customer_zip_code_prefix:
+        aggregation_methods: []
+        analysis_tags: []
+        business_domain: sales
+        cardinality: 935
+        categories: null
+        data_type: &id006 !!python/object/apply:schema.schema_manager.DataType
+        - integer
+        description: null
+        display_name: Customer Zip Code Prefix
+        foreign_key_to: null
+        max_value: 99980.0
+        mean_value: 34373.614
+        min_value: 1008.0
+        name: customer_zip_code_prefix
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id004
+        std_value: 29541.443475084212
+        unique_ratio: 0.935
+    description: Auto-discovered schema for customers
+    fact_or_dimension: null
+    foreign_keys:
+      customer_id: orders.id
+    name: customers
+    primary_key: null
+    related_tables: []
+  order_items:
+    analysis_tags: []
+    business_domain: sales
+    columns:
+      freight_value:
+        aggregation_methods:
+        - sum
+        - avg
+        - min
+        - max
+        - count
+        analysis_tags:
+        - quantitative
+        - aggregatable
+        business_domain: null
+        cardinality: 593
+        categories: null
+        data_type: &id007 !!python/object/apply:schema.schema_manager.DataType
+        - float
+        description: null
+        display_name: Freight Value
+        foreign_key_to: null
+        max_value: 102.63
+        mean_value: 19.7047
+        min_value: 0.0
+        name: freight_value
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: &id008 !!python/object/apply:schema.schema_manager.SemanticRole
+        - measure
+        std_value: 13.387774513204814
+        unique_ratio: 0.593
+      order_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: sales
+        cardinality: 877
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Order Id
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: null
+        unique_ratio: 0.877
+      order_item_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: sales
+        cardinality: 5
+        categories:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        data_type: *id006
+        description: null
+        display_name: Order Item Id
+        foreign_key_to: null
+        max_value: 5.0
+        mean_value: 1.162
+        min_value: 1.0
+        name: order_item_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: 0.48579006987791756
+        unique_ratio: 0.005
+      price:
+        aggregation_methods:
+        - sum
+        - avg
+        - min
+        - max
+        - count
+        analysis_tags:
+        - quantitative
+        - financial
+        - aggregatable
+        business_domain: null
+        cardinality: 470
+        categories: null
+        data_type: *id007
+        description: null
+        display_name: Price
+        foreign_key_to: null
+        max_value: 1820.0
+        mean_value: 113.84308999999999
+        min_value: 3.49
+        name: price
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id008
+        std_value: 146.0432655741834
+        unique_ratio: 0.47
+      product_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: product
+        cardinality: 832
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Product Id
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: product_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: null
+        unique_ratio: 0.832
+      seller_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: null
+        cardinality: 456
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Seller Id
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: seller_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: null
+        unique_ratio: 0.456
+      shipping_limit_date:
+        aggregation_methods: []
+        analysis_tags:
+        - filterable
+        - time-series
+        business_domain: temporal
+        cardinality: 877
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Shipping Limit Date
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: shipping_limit_date
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: &id010 !!python/object/apply:schema.schema_manager.SemanticRole
+        - temporal
+        std_value: null
+        unique_ratio: 0.877
+    description: Auto-discovered schema for order_items
+    fact_or_dimension: null
+    foreign_keys:
+      order_id: orders.id
+    name: order_items
+    primary_key: null
+    related_tables: []
+  orders:
+    analysis_tags: []
+    business_domain: sales
+    columns:
+      customer_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: sales
+        cardinality: 1000
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Customer Id
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: customer_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: null
+        unique_ratio: 1.0
+      order_approved_at:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: sales
+        cardinality: 1000
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Order Approved At
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_approved_at
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: null
+        unique_ratio: 1.0
+      order_delivered_carrier_date:
+        aggregation_methods: []
+        analysis_tags:
+        - filterable
+        - time-series
+        business_domain: sales
+        cardinality: 985
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Order Delivered Carrier Date
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_delivered_carrier_date
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          ukkMAiuHhj8=
+        nullable: &id011 !!python/object/apply:numpy.core.multiarray.scalar
+        - *id009
+        - !!binary |
+          AQ==
+        related_columns: []
+        semantic_role: *id010
+        std_value: null
+        unique_ratio: 0.985
+      order_delivered_customer_date:
+        aggregation_methods: []
+        analysis_tags:
+        - filterable
+        - time-series
+        business_domain: sales
+        cardinality: 975
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Order Delivered Customer Date
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_delivered_customer_date
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          mpmZmZmZmT8=
+        nullable: *id011
+        related_columns: []
+        semantic_role: *id010
+        std_value: null
+        unique_ratio: 0.975
+      order_estimated_delivery_date:
+        aggregation_methods: []
+        analysis_tags:
+        - filterable
+        - time-series
+        business_domain: sales
+        cardinality: 349
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Order Estimated Delivery Date
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_estimated_delivery_date
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id010
+        std_value: null
+        unique_ratio: 0.349
+      order_id:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - joinable
+        - unique
+        business_domain: sales
+        cardinality: 1000
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Order Id
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_id
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id005
+        std_value: null
+        unique_ratio: 1.0
+      order_purchase_timestamp:
+        aggregation_methods: []
+        analysis_tags:
+        - filterable
+        - time-series
+        business_domain: sales
+        cardinality: 1000
+        categories: null
+        data_type: *id001
+        description: null
+        display_name: Order Purchase Timestamp
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_purchase_timestamp
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: *id010
+        std_value: null
+        unique_ratio: 1.0
+      order_status:
+        aggregation_methods:
+        - count
+        - count_distinct
+        analysis_tags:
+        - categorical
+        - groupable
+        business_domain: sales
+        cardinality: 6
+        categories:
+        - delivered
+        - invoiced
+        - shipped
+        - processing
+        - unavailable
+        - canceled
+        data_type: *id001
+        description: null
+        display_name: Order Status
+        foreign_key_to: null
+        max_value: null
+        mean_value: null
+        min_value: null
+        name: order_status
+        null_ratio: !!python/object/apply:numpy.core.multiarray.scalar
+        - *id002
+        - !!binary |
+          AAAAAAAAAAA=
+        nullable: *id003
+        related_columns: []
+        semantic_role: !!python/object/apply:schema.schema_manager.SemanticRole
+        - dimension
+        std_value: null
+        unique_ratio: 0.006
+    description: Auto-discovered schema for orders
+    fact_or_dimension: null
+    foreign_keys:
+      customer_id: customers.id
+      order_id: order_items.id
+    name: orders
+    primary_key: null
+    related_tables: []
+version: '1.0'

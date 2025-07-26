@@ -1,0 +1,30 @@
+# Core dependencies
+# Using ~= for minor version flexibility while maintaining compatibility
+pandas~=2.2.0  # Allows 2.2.x updates but not 2.3.0 (which might have breaking changes)
+numpy~=1.26.0  # Compatible with pandas 2.2, using stable 1.26 series
+networkx~=3.2  # Recent stable version with good compatibility
+matplotlib~=3.8.0  # Stable version that works well with numpy 1.26
+seaborn~=0.13.0  # Latest stable version
+scikit-learn~=1.4.0  # Recent version with good scipy compatibility
+scipy~=1.12.0  # Version that satisfies both scikit-learn and ydata-profiling
+
+# Schema discovery and profiling
+ydata-profiling>=4.6.0  # Recent versions with better compatibility
+pyyaml>=6.0  # Stable and widely compatible
+
+# Web framework dependencies
+fastapi>=0.109.0  # Recent stable version
+uvicorn[standard]>=0.27.0  # Including 'standard' for full feature set
+streamlit>=1.31.0  # Recent version with many improvements
+plotly>=5.18.0  # Latest stable with good performance
+requests>=2.31.0  # Updated for security patches
+python-multipart>=0.0.6  # Compatible with recent fastapi
+
+# Multi-agent dependencies
+langchain>=0.1.0,<0.2.0  # Stable 0.1.x series
+langgraph>=0.0.20  # Compatible with langchain 0.1.x
+langchain-openai>=0.0.5  # Matches langchain version
+langchain-core>=0.1.0,<0.2.0  # Core package matching langchain
+openai>=1.12.0  # Recent version with stability improvements
+pydantic>=2.5.0,<3.0.0  # V2 is stable, avoiding V3 until ecosystem catches up
+typing-extensions>=4.9.0  # Recent version for better type hints
