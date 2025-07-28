@@ -167,6 +167,17 @@ ehthumbs.db
 *.swo
 *~
 
+# Files with potential credentials
+demo_llm_graph_flow.py
+test_llm_graph_traversal.py
+test_schema_validation_with_llm.py
+test_token_efficiency.py
+show_enriched_context.py
+
+# Jupyter Notebooks (may contain credentials/outputs)
+*.ipynb
+notebooks/
+
 # Database
 *.db
 *.sqlite
@@ -178,6 +189,9 @@ logs/
 # Data files (optional - uncomment if you want to exclude data)
 # data/raw/
 # data/processed/
+
+# Large data files
+data/raw/ecommerce/olist_geolocation_dataset.csv
 
 # Model files
 *.pkl

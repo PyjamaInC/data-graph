@@ -11,6 +11,8 @@ from .intent_recognizer import IntentRecognitionAgent
 from .schema_validator import SchemaValidationAgent
 from .relationship_explorer import RelationshipExplorerAgent
 from .orchestrator import ReActQueryOrchestrator
+from .data_exploration_agent import DataExplorationReActAgent, DataExplorationToolkit
+from .enhanced_data_exploration_agent import EnhancedDataExplorationReActAgent
 
 __all__ = [
     'BaseReActAgent',
@@ -19,5 +21,8 @@ __all__ = [
     'IntentRecognitionAgent',
     'SchemaValidationAgent', 
     'RelationshipExplorerAgent',
-    'ReActQueryOrchestrator'
+    'ReActQueryOrchestrator',
+    'DataExplorationReActAgent',
+    'DataExplorationToolkit',
+    'EnhancedDataExplorationReActAgent'
 ]

@@ -12,6 +12,10 @@ scipy~=1.12.0  # Version that satisfies both scikit-learn and ydata-profiling
 ydata-profiling>=4.6.0  # Recent versions with better compatibility
 pyyaml>=6.0  # Stable and widely compatible
 
+# Enhanced table intelligence dependencies
+sentence-transformers>=2.2.0  # For semantic table embeddings
+ollama>=0.1.0  # For local LLM integration
+
 # Web framework dependencies
 fastapi>=0.109.0  # Recent stable version
 uvicorn[standard]>=0.27.0  # Including 'standard' for full feature set
