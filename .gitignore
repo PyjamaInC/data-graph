@@ -193,6 +193,9 @@ logs/
 # Large data files
 data/raw/ecommerce/olist_geolocation_dataset.csv
 
+# Vector database storage
+qdrant_storage/
+
 # Model files
 *.pkl
 *.h5
